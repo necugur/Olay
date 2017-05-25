@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+     
+      
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+      <h:body>
+       
+<center>
+    
+    <h:form>
+  
+    <h1 style="margin-top:0">CNS Olay Raporlama</h1>
+        <h:form>
+           
+              <p:accordionPanel>
+        <p:tab title="Kişi Bilgileri">
+            
+            <h:panelGrid border="1" columns="8" cellpadding="5" cellspacing="20">
+                          
+              
+                <h:outputLabel  value="Ad Soyad" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.name}"/>
+                
+                <h:outputLabel  value="Ünvan" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.unvan}"/>
+                
+                <h:outputLabel  value="Kurum" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.kurum}"/>
+                
+                 <h:outputLabel  value="E-posta" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.posta}"/>
+                
+                 </h:panelGrid>
+            
+              </p:tab>
+   
+            
+            
+        <p:tab title="Olay Bilgileri">
+            
+             <h:panelGrid border="1" columns="6" cellpadding="5" cellspacing="20">
+                 
+                
+                 <h:outputLabel  value="Olay Tarihi" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.tarih}"/>
+                
+                <h:outputLabel  value="Olay Saati" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.saat}"/>
+                
+                
+                <h:outputLabel  value="Havaalanı/ATC Kodu" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.atc}"/>
+                
+                 <h:outputLabel  value="Havaaracı Çağrı Kodu" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.cagri}"/>
+                
+                 <h:outputLabel  value="Havaaracı Tescil İşareti" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.tescil}"/>
+                
+                </h:panelGrid>
+            
+              </p:tab>
+    
+        <p:tab title="Seyrüsefer Yardımcı Cihazları">
+            
+            <h:panelGrid border="1" columns="10" cellpadding="5" cellspacing="20" >
+                
+                <h:outputLabel  value="ILS Tanıtma Kodu" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.ilsid}" style="width:70px"/>
+                
+                <h:outputLabel  value="Localizer" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.localizer}" style="width:120px"/>
+                
+                 <h:outputLabel  value="Glidepath(GP)" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.gp}" style="width:120px"/>
+                
+                 <h:outputLabel  value="GP/DME" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.gpdme}" style="width:120px"/>
+                
+                <h:outputLabel  value="Marker" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.marker}" style="width:120px"/>
+                
+                <h:outputLabel  value="VOR Tanıtma Kodu" style="font-weight:bold; width:900px" />
+                <p:inputText value="#{StudentManagedBean.vorid}" style="width:70px"/>
+                
+                 <h:outputLabel  value="VOR" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.vor}" style="width:120px"/>
+                
+                 <h:outputLabel  value="VOR/DME" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.vordme}" style="width:120px"/>
+                
+                <h:outputLabel  value="NDB Tanıtma Kodu" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.ndbid}" style="width:120px"/>
+                
+                <h:outputLabel  value="NDB" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.ndb}" style="width:120px"/>
+                
+                 </h:panelGrid>
+                               
+                </p:tab>
+   
+        <p:tab title="Haberleşme Cihazları">
+            
+            <h:panelGrid border="1" columns="8" cellpadding="5" cellspacing="20" >
+                
+                 <h:outputLabel  value="Kule Frekansı(MHz)" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.kule}" style="width:70px"/>
+                
+                 <h:outputLabel  value="Kule Frekansı" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.kulefreq}" style="width:120px"/>
+                
+                 <h:outputLabel  value="APP Frekansı(MHz)" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.app}" style="width:70px"/>
+                
+                 <h:outputLabel  value="APP Frekansı" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.appfreq}" style="width:120px"/>
+                
+                 <h:outputLabel  value="ACC Frekansı(MHz)" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.acc}" style="width:70px"/>
+                
+                 <h:outputLabel  value="ACC Frekansı" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.accfreq}" style="width:120px"/>
+                
+                 <h:outputLabel  value="ATIS Frekansı(MHz)" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.atis}" style="width:70px"/>
+                
+                 <h:outputLabel  value="ATIS Frekansı" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.atisfreq}" style="width:120px"/>
+                
+                </h:panelGrid>
+                
+                 </p:tab>
+    
+        <p:tab title="Gözetim Cihazları">
+            
+             <h:panelGrid border="1" columns="2" cellpadding="5" cellspacing="20" >
+                
+                 <h:outputLabel  value="Radar" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.radar}"/>
+                
+                 <h:outputLabel  value="GPS" style="font-weight:bold" />
+                <p:inputText value="#{StudentManagedBean.gps}"/>
+                
+                
+                </h:panelGrid>
+                
+                </p:tab>
+                  
+                  <p:tab title="Açıklama">
+            
+                      <h:panelGrid border="1" columns="2" cellpadding="5" cellspacing="20" >
+                          
+                           <h:outputLabel  value="Açıklama" style="font-weight:bold" />
+                           
+                <p:inputTextarea rows="10" cols="120" value="#{StudentManagedBean.detay}"/>
+                
+             
+                          
+                      </h:panelGrid>
+                  </p:tab>
+                      
+                  
+    </p:accordionPanel>
+                                              
+           
+        </h:form>
+    
+   
+    
+    
+     <h:panelGrid columns="1" cellpadding="5">
+         
+         
+         <p:commandButton value="Gönder" actionListener="#{StudentManagedBean.add}" styleClass="ui-priority-primary" onclick="PF('dlg1').show();" />
+         
+         
+     </h:panelGrid>
+    
+     
+          <p:dialog header="Durum" widgetVar="dlg1" minHeight="40">
+              
+    <h:outputText value="Rapor Gönderildi!" />
+    
+          </p:dialog>
+        
+    </h:form>
+     
+   </center>
+          
+          <h:form>
+          
+          <p:commandButton value="CNS Olay Raporları için Tıklayınız!" style="font-size : 18px;" action="Raporlar" styleClass="ui-priority-primary" />
+          
+          </h:form>
+          
+          </h:body>
+    
+</html>
+
+   
+

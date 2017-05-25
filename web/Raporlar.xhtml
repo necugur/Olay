@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:fcore="http://java.sun.com/jsf/core"
+          
+      xmlns:p="http://primefaces.org/ui">
+      
+    <h:head>
+        <title>Olay Raporlama</title>
+    </h:head>
+    <h:body>
+        
+        <fcore:view>
+            <h:form>
+                
+                <p:growl id="growl" life="2000" />
+                
+                <center>
+                
+                <h1 style="margin-top:0">Olay Raporları</h1>
+                
+                </center>
+                
+                <p:tabView>
+                    <p:tab title="CNS Olayları">
+                        
+                        <center>
+                        
+                <p:dataTable var="list" value="#{StudentManagedBean.GetAllStudent()}" reflow="true" rows="10" paginator="true" >
+                    
+                    <p:column headerText="No" style="width:20px">
+                        <h:outputText value="#{list.id}" style="font-size:12pt"/>
+                    </p:column>
+                    
+                    <p:column headerText="Ad Soyad" style="width:180px">
+                        <h:outputText value="#{list.name}" style="font-size:12pt"/>
+                    </p:column>
+                   
+                    <p:column headerText="Ünvan" style="width:100px">
+                        <h:outputText value="#{list.unvan}" style="font-size:12pt"/>
+                    </p:column>
+                    
+                    <p:column headerText="Kurum" style="width:100px">
+                        <h:outputText value="#{list.kurum}" style="font-size:12pt"/>
+                    </p:column>
+                   
+                    <p:column headerText="E-posta" style="width:220px">
+                        <h:outputText value="#{list.posta}" style="font-size:12pt"/>
+                    </p:column>  
+                    
+                     <p:column headerText="Olay Tarihi" style="width:80px">
+                        <h:outputText value="#{list.tarih}" style="font-size:12pt"/>
+                    </p:column>
+                    
+                    <p:column headerText="Olay Saati" style="width:80px">
+                        <h:outputText value="#{list.saat}" style="font-size:12pt"/>
+                    </p:column>
+                   
+                    <p:column headerText="Havaalanı/ATC Kodu" style="width:120px">
+                        <h:outputText value="#{list.atc}" style="font-size:12pt"/>
+                    </p:column>
+                    
+                    <p:column headerText="Havaaracı Çağrı adı" style="width:80px">
+                        <h:outputText value="#{list.cagri}" style="font-size:12pt"/>
+                    </p:column>
+                 
+                    <p:column headerText="Havaaracı Tescili" style="width:80px">
+                        <h:outputText value="#{list.tescil}" style="font-size:12pt"/>
+                    </p:column>  
+                    
+                     <p:column headerText="ILS Tanıtma" style="width:80px">
+                        <h:outputText value="#{list.ilsid}" style="font-size:12pt"/>
+                    </p:column>
+                    
+                    <p:column headerText="Localizer"  style="width:80px">
+                        <h:outputText value="#{list.localizer}" style="font-size:12pt"/>
+                    </p:column>
+                   
+                    <p:column headerText="Glidepath(GP)" style="width:120px">
+                        <h:outputText value="#{list.gp}" style="font-size:12pt"/>
+                    </p:column>
+                    
+                    <p:column headerText="GP/DME" style="width:80px">
+                        <h:outputText value="#{list.gpdme}" style="font-size:12pt"/>
+                    </p:column>
+                 
+                    <p:column headerText="Marker" style="width:80px">
+                        <h:outputText value="#{list.marker}" style="font-size:12pt"/>
+                    </p:column>  
+                    
+                     <p:column headerText="NDB Tanıtma" style="width:80px">
+                        <h:outputText value="#{list.ndbid}" style="font-size:12pt"/>
+                    </p:column>
+                    
+                    <p:column headerText="NDB" style="width:80px">
+                        <h:outputText value="#{list.ndb}" style="font-size:12pt"/>
+                    </p:column>
+                   
+                    <p:column headerText="Kule Frekansı(Mhz)" style="width:120px">
+                        <h:outputText value="#{list.kule}" style="font-size:12pt"/>
+                    </p:column>
+                    
+                    <p:column headerText="Kule Frekansı" style="width:80px">
+                        <h:outputText value="#{list.kulefreq}" style="font-size:12pt"/>
+                    </p:column>
+                 
+                    <p:column headerText="APP Frekansı(Mhz)" style="width:120px">
+                        <h:outputText value="#{list.app}" style="font-size:12pt"/>
+                    </p:column>  
+                    
+                    <p:column headerText="APP Frekansı" style="width:80px">
+                      <h:outputText value="#{list.appfreq}" style="font-size:12pt"/>
+                    </p:column>  
+                    
+                    <p:column headerText="ACC Frekansı(Mhz)" style="width:120px">
+                        <h:outputText value="#{list.acc}" style="font-size:12pt"/>
+                    </p:column>
+                    
+                    <p:column headerText="ACC Frekansı" style="width:80px">
+                        <h:outputText value="#{list.accfreq}" style="font-size:12pt"/>
+                    </p:column>
+                 
+                    <p:column headerText="ATIS Frekansı(Mhz)" style="width:120px">
+                        <h:outputText value="#{list.atis}" style="font-size:12pt"/>
+                    </p:column>  
+                    
+                    <p:column headerText="ATIS Frekansı" style="width:80px">
+                        <h:outputText value="#{list.atisfreq}" style="font-size:12pt"/>
+                    </p:column>
+                    
+                    <p:column headerText="Radar" style="width:80px">
+                        <h:outputText value="#{list.radar}" style="font-size:12pt"/>
+                    </p:column>
+                 
+                    <p:column headerText="GPS" style="width:80px">
+                        <h:outputText value="#{list.gps}" style="font-size:12pt"/>
+                    </p:column>  
+                    
+                                     
+                </p:dataTable> 
+                
+                <p:commandButton value="Olay Raporlama için Tıklayınız!" style="font-size : 25px;" action="add" styleClass="ui-priority-primary" />
+                
+                </center>
+                
+                </p:tab>
+                
+                    
+                    
+                    <p:tab title="ATM Olayları">
+                       
+                    </p:tab>
+                
+                    
+                    <p:tab title="OPS Olayları">
+                       
+                    </p:tab>
+                    
+                    <p:tab title="Uçuşaelverişlilik Olayları">
+                       
+                    </p:tab>
+                    
+                     <p:tab title="Havaalanı Olayları">
+                       
+                    </p:tab>
+                  
+                    
+                    </p:tabView>
+               
+                    
+            </h:form>
+            
+        </fcore:view>
+            
+ 
+        
+    </h:body>
+    
+</html>
+
