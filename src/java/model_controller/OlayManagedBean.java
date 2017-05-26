@@ -20,20 +20,20 @@ import javax.faces.bean.ManagedBean;
  *
  * @author necdetozkan
  */
-@ManagedBean(name="StudentManagedBean")
+@ManagedBean(name="OlayManagedBean")
 @RequestScoped
-public class StudentManagedBean 
+public class OlayManagedBean 
 {
   
    private int id;
    private String name,unvan,kurum,posta,tarih,saat,atc,cagri,tescil,ilsid,localizer,gp,gpdme,marker,vorid,vor,vordme,ndbid,ndb,kule,kulefreq,app,appfreq,acc,accfreq,atis,atisfreq,gps,radar,detay;
                
             
-    public StudentManagedBean() 
+    public OlayManagedBean() 
     {
     }
 
-    public StudentManagedBean(int id, String name, String unvan, String kurum, String posta, String tarih, String saat, String atc, String cagri, String tescil, String ilsid, String localizer, String gp, String gpdme, String marker, String vorid, String vor, String vordme, String ndbid, String ndb, String kule, String kulefreq, String app, String appfreq, String acc, String accfreq, String atis, String atisfreq, String gps, String radar, String detay) {
+    public OlayManagedBean(int id, String name, String unvan, String kurum, String posta, String tarih, String saat, String atc, String cagri, String tescil, String ilsid, String localizer, String gp, String gpdme, String marker, String vorid, String vor, String vordme, String ndbid, String ndb, String kule, String kulefreq, String app, String appfreq, String acc, String accfreq, String atis, String atisfreq, String gps, String radar, String detay) {
         this.id = id;
         this.name = name;
         this.unvan = unvan;
@@ -334,9 +334,9 @@ public class StudentManagedBean
     conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/deneme","root","necugur");
            
        } catch (ClassNotFoundException ex) {
-           Logger.getLogger(StudentManagedBean.class.getName()).log(Level.SEVERE, null, ex);
+           Logger.getLogger(OlayManagedBean.class.getName()).log(Level.SEVERE, null, ex);
        } catch (SQLException ex) {
-           Logger.getLogger(StudentManagedBean.class.getName()).log(Level.SEVERE, null, ex);
+           Logger.getLogger(OlayManagedBean.class.getName()).log(Level.SEVERE, null, ex);
        }
        return conn;
     }
@@ -348,7 +348,7 @@ public class StudentManagedBean
                 conn.close();
         } catch (SQLException ex) 
         {
-            Logger.getLogger(StudentManagedBean.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(OlayManagedBean.class.getName()).log(Level.SEVERE, null, ex);
         }
     } 
          if (pstmt!=null)  {
@@ -357,7 +357,7 @@ public class StudentManagedBean
                 pstmt.close();
         } catch (SQLException ex) 
         {
-            Logger.getLogger(StudentManagedBean.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(OlayManagedBean.class.getName()).log(Level.SEVERE, null, ex);
         }
     } 
           if (rs!=null)  {
@@ -366,7 +366,7 @@ public class StudentManagedBean
                 rs.close();
         } catch (SQLException ex) 
         {
-            Logger.getLogger(StudentManagedBean.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(OlayManagedBean.class.getName()).log(Level.SEVERE, null, ex);
         }
     } 
 }  
@@ -378,11 +378,11 @@ public class StudentManagedBean
 
 //    }
     
-    public ArrayList<StudentManagedBean> GetAllStudent()
+    public ArrayList<OlayManagedBean> GetAllReport()
     {
         
     
-    ArrayList<StudentManagedBean> arr=new ArrayList<>();
+    ArrayList<OlayManagedBean> arr=new ArrayList<>();
     str="SELECT id,name,unvan,kurum,posta,tarih,saat,atc,cagri,tescil,ilsid,localizer,gp,gpdme,marker,vorid,vor,vordme,ndbid,ndb,kule,kulefreq,app,appfreq,acc,accfreq,atis,atisfreq,gps,radar,detay FROM rapor";
     getConnection();
        try {
@@ -390,7 +390,7 @@ public class StudentManagedBean
           rs= pstmt.executeQuery();
           while(rs.next())
           {
-            StudentManagedBean st=new StudentManagedBean();
+            OlayManagedBean st=new OlayManagedBean();
             st.setId(rs.getInt("id"));
             st.setName(rs.getString("name"));
             st.setUnvan(rs.getString("unvan"));
@@ -428,7 +428,7 @@ public class StudentManagedBean
             
           }
        } catch (SQLException ex) {
-           Logger.getLogger(StudentManagedBean.class.getName()).log(Level.SEVERE, null, ex);
+           Logger.getLogger(OlayManagedBean.class.getName()).log(Level.SEVERE, null, ex);
        }
     
     finally
@@ -490,7 +490,7 @@ try
     catch (SQLException ex)
         
     {
-        Logger.getLogger(StudentManagedBean.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(OlayManagedBean.class.getName()).log(Level.SEVERE, null, ex);
    
     }
 
