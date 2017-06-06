@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
      
       
     <h:head>
@@ -47,11 +48,12 @@
                  
                 
                  <h:outputLabel  value="Olay Tarihi" style="font-weight:bold" />
-                 <p:calendar value="#{OlayManagedBean.tarih}" pattern="dd-MM-yyyy" mask="true" />
+                 <p:inputText value="#{OlayManagedBean.tarih}" type="date" />
+              
                 
                 
                 <h:outputLabel  value="Olay Saati" style="font-weight:bold" />
-                <p:calendar value="#{OlayManagedBean.saat}" pattern="HH:mm" timeOnly="true" id="Saat"/>
+                <p:inputText value="#{OlayManagedBean.saat}" type="time"/>
                 
                 
                 <h:outputLabel  value="Havaalanı/ATC Kodu" style="font-weight:bold" />
