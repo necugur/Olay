@@ -27,10 +27,10 @@
                         
                         <center>
                         
-                <p:dataTable var="list" value="#{OlayManagedBean.GetAllReport()}" reflow="true" rows="10" paginator="true" >
+                            <p:dataTable var="list" value="#{OlayManagedBean.GetAllReport()}" reflow="true" rows="10" paginator="true" sortBy="#{list.id}" sortOrder="descending" >
                     
-                    <p:column headerText="No" style="width:20px">
-                        <h:outputText value="#{list.id}" style="font-size:12pt"/>
+                                <p:column headerText="No" style="width:20px" sortBy="#{list.id}">
+                        <h:outputText value="#{list.id}" style="font-size:12pt" />
                     </p:column>
                     
                     <p:column headerText="Ad Soyad" style="width:180px">
@@ -49,7 +49,7 @@
                         <h:outputText value="#{list.posta}" style="font-size:12pt"/>
                     </p:column>  
                     
-                     <p:column headerText="Olay Tarihi" style="width:80px">
+                     <p:column headerText="Olay Tarihi" style="width:80px" >
                         <h:outputText value="#{list.tarih}" style="font-size:12pt"/>
                     </p:column>
                     

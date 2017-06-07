@@ -383,7 +383,7 @@ public class OlayManagedBean
         
     
     ArrayList<OlayManagedBean> arr=new ArrayList<>();
-    str="SELECT id,name,unvan,kurum,posta,tarih,saat,atc,cagri,tescil,ilsid,localizer,gp,gpdme,marker,vorid,vor,vordme,ndbid,ndb,kule,kulefreq,app,appfreq,acc,accfreq,atis,atisfreq,gps,radar,detay FROM rapor";
+    str="SELECT id,name,unvan,kurum,posta,tarih,saat,atc,cagri,tescil,ilsid,localizer,gp,gpdme,marker,vorid,vor,vordme,ndbid,ndb,kule,kulefreq,app,appfreq,acc,accfreq,atis,atisfreq,gps,radar,detay FROM raporlar";
     getConnection();
        try {
           pstmt=conn.prepareStatement(str);
@@ -443,7 +443,7 @@ public class OlayManagedBean
 public void add()
 {
 getConnection();
-str="insert into rapor(name,unvan,kurum,posta,tarih,saat,atc,cagri,tescil,ilsid,localizer,gp,gpdme,marker,vorid,vor,vordme,ndbid,ndb,kule,kulefreq,app,appfreq,acc,accfreq,atis,atisfreq,radar,gps,detay) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+str="insert into raporlar(name,unvan,kurum,posta,tarih,saat,atc,cagri,tescil,ilsid,localizer,gp,gpdme,marker,vorid,vor,vordme,ndbid,ndb,kule,kulefreq,app,appfreq,acc,accfreq,atis,atisfreq,radar,gps,detay) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 try
 {
     pstmt=conn.prepareStatement(str);
