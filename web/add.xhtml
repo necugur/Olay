@@ -77,13 +77,32 @@
                 <p:inputText value="#{OlayManagedBean.ilsid}" style="width:70px"/>
                 
                 <h:outputLabel  value="Localizer" style="font-weight:bold" />
-                <p:inputText value="#{OlayManagedBean.localizer}" style="width:120px"/>
+                <p:selectOneMenu id="localizer" value="#{OlayManagedBean.localizer}" style="width:120px">
+            <f:selectItem itemLabel="-" itemValue="" />
+            <f:selectItem itemLabel="devredışı olduğu" itemValue="devredışı olduğu" />
+            <f:selectItem itemLabel="enterferans olduğu" itemValue="enterferans olduğu" />
+            <f:selectItem itemLabel="salınıma neden olduğu" itemValue="salınıma neden olduğu" />
+            <f:selectItem itemLabel="NOTAM'lı olduğu" itemValue="NOTAM'lı olduğu" />
+                        
+                </p:selectOneMenu>
+              
                 
                  <h:outputLabel  value="Glidepath(GP)" style="font-weight:bold" />
-                <p:inputText value="#{OlayManagedBean.gp}" style="width:120px"/>
+                 <p:selectOneMenu id="glidepath" value="#{OlayManagedBean.glidepath}" style="width:120px">
+            <f:selectItem itemLabel="-" itemValue="" />
+            <f:selectItem itemLabel="devredışı olduğu" itemValue="devredışı olduğu" />
+            <f:selectItem itemLabel="enterferans olduğu" itemValue="enterferans olduğu" />
+            <f:selectItem itemLabel="salınıma neden olduğu" itemValue="salınıma neden olduğu" />
+            <f:selectItem itemLabel="NOTAM'lı olduğu" itemValue="NOTAM'lı olduğu" />
                 
                  <h:outputLabel  value="GP/DME" style="font-weight:bold" />
-                <p:inputText value="#{OlayManagedBean.gpdme}" style="width:120px"/>
+                <p:selectOneMenu id="gpdme" value="#{OlayManagedBean.gpdme}" style="width:120px">
+            <f:selectItem itemLabel="-" itemValue="" />
+            <f:selectItem itemLabel="devredışı olduğu" itemValue="devredışı olduğu" />
+            <f:selectItem itemLabel="enterferans olduğu" itemValue="enterferans olduğu" />
+            <f:selectItem itemLabel="salınıma neden olduğu" itemValue="salınıma neden olduğu" />
+            <f:selectItem itemLabel="NOTAM'lı olduğu" itemValue="NOTAM'lı olduğu" />
+            
                 
                 <h:outputLabel  value="Marker" style="font-weight:bold" />
                 <p:inputText value="#{OlayManagedBean.marker}" style="width:120px"/>
