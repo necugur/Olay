@@ -88,39 +88,60 @@
               
                 
                  <h:outputLabel  value="Glidepath(GP)" style="font-weight:bold" />
-                 <p:selectOneMenu id="glidepath" value="#{OlayManagedBean.glidepath}" style="width:120px">
+            <p:selectOneMenu id="glidepath" value="#{OlayManagedBean.gp}" style="width:120px">
             <f:selectItem itemLabel="-" itemValue="" />
             <f:selectItem itemLabel="devredışı olduğu" itemValue="devredışı olduğu" />
             <f:selectItem itemLabel="enterferans olduğu" itemValue="enterferans olduğu" />
             <f:selectItem itemLabel="salınıma neden olduğu" itemValue="salınıma neden olduğu" />
             <f:selectItem itemLabel="NOTAM'lı olduğu" itemValue="NOTAM'lı olduğu" />
+            </p:selectOneMenu>
                 
                  <h:outputLabel  value="GP/DME" style="font-weight:bold" />
                 <p:selectOneMenu id="gpdme" value="#{OlayManagedBean.gpdme}" style="width:120px">
             <f:selectItem itemLabel="-" itemValue="" />
             <f:selectItem itemLabel="devredışı olduğu" itemValue="devredışı olduğu" />
             <f:selectItem itemLabel="enterferans olduğu" itemValue="enterferans olduğu" />
-            <f:selectItem itemLabel="salınıma neden olduğu" itemValue="salınıma neden olduğu" />
             <f:selectItem itemLabel="NOTAM'lı olduğu" itemValue="NOTAM'lı olduğu" />
-            
+            </p:selectOneMenu>
                 
                 <h:outputLabel  value="Marker" style="font-weight:bold" />
-                <p:inputText value="#{OlayManagedBean.marker}" style="width:120px"/>
+                <p:selectOneMenu id="marker" value="#{OlayManagedBean.marker}" style="width:120px">
+            <f:selectItem itemLabel="-" itemValue="" />
+            <f:selectItem itemLabel="devredışı olduğu" itemValue="devredışı olduğu" />
+            <f:selectItem itemLabel="NOTAM'lı olduğu" itemValue="NOTAM'lı olduğu" />
+            </p:selectOneMenu>
                 
                 <h:outputLabel  value="VOR Tanıtma Kodu" style="font-weight:bold; width:900px" />
                 <p:inputText value="#{OlayManagedBean.vorid}" style="width:70px"/>
                 
                  <h:outputLabel  value="VOR" style="font-weight:bold" />
-                <p:inputText value="#{OlayManagedBean.vor}" style="width:120px"/>
+                <p:selectOneMenu id="vor" value="#{OlayManagedBean.vor}" style="width:120px">
+            <f:selectItem itemLabel="-" itemValue="" />
+            <f:selectItem itemLabel="devredışı olduğu" itemValue="devredışı olduğu" />
+            <f:selectItem itemLabel="enterferans olduğu" itemValue="enterferans olduğu" />
+            <f:selectItem itemLabel="salınıma neden olduğu" itemValue="salınıma neden olduğu" />
+            <f:selectItem itemLabel="NOTAM'lı olduğu" itemValue="NOTAM'lı olduğu" />
+            </p:selectOneMenu>
+            
                 
                  <h:outputLabel  value="VOR/DME" style="font-weight:bold" />
-                <p:inputText value="#{OlayManagedBean.vordme}" style="width:120px"/>
+                 <p:selectOneMenu id="vordme" value="#{OlayManagedBean.vordme}" style="width:120px">
+            <f:selectItem itemLabel="-" itemValue="" />
+            <f:selectItem itemLabel="devredışı olduğu" itemValue="devredışı olduğu" />
+            <f:selectItem itemLabel="enterferans olduğu" itemValue="enterferans olduğu" />
+            <f:selectItem itemLabel="NOTAM'lı olduğu" itemValue="NOTAM'lı olduğu" />
+            </p:selectOneMenu>
                 
                 <h:outputLabel  value="NDB Tanıtma Kodu" style="font-weight:bold" />
                 <p:inputText value="#{OlayManagedBean.ndbid}" style="width:120px"/>
                 
                 <h:outputLabel  value="NDB" style="font-weight:bold" />
-                <p:inputText value="#{OlayManagedBean.ndb}" style="width:120px"/>
+                 <p:selectOneMenu id="ndb" value="#{OlayManagedBean.ndb}" style="width:120px">
+            <f:selectItem itemLabel="-" itemValue="" />
+            <f:selectItem itemLabel="devredışı olduğu" itemValue="devredışı olduğu" />
+            <f:selectItem itemLabel="salınıma neden olduğu" itemValue="salınıma neden olduğu" />
+            <f:selectItem itemLabel="NOTAM'lı olduğu" itemValue="NOTAM'lı olduğu" />
+            </p:selectOneMenu>
                 
                  </h:panelGrid>
                                
@@ -134,25 +155,46 @@
                 <p:inputText value="#{OlayManagedBean.kule}" style="width:70px"/>
                 
                  <h:outputLabel  value="Kule Frekansı" style="font-weight:bold" />
-                <p:inputText value="#{OlayManagedBean.kulefreq}" style="width:120px"/>
+                 <p:selectOneMenu id="kulefreq" value="#{OlayManagedBean.kulefreq}" style="width:120px">
+            <f:selectItem itemLabel="-" itemValue="" />
+            <f:selectItem itemLabel="devredışı olduğu" itemValue="devredışı olduğu" />
+            <f:selectItem itemLabel="enterferans olduğu" itemValue="enterferans olduğu" />
+            <f:selectItem itemLabel="NOTAM'lı olduğu" itemValue="NOTAM'lı olduğu" />
+            </p:selectOneMenu>
+            
                 
                  <h:outputLabel  value="APP Frekansı(MHz)" style="font-weight:bold" />
                 <p:inputText value="#{OlayManagedBean.app}" style="width:70px"/>
                 
                  <h:outputLabel  value="APP Frekansı" style="font-weight:bold" />
-                <p:inputText value="#{OlayManagedBean.appfreq}" style="width:120px"/>
+                <p:selectOneMenu id="appfreq" value="#{OlayManagedBean.appfreq}" style="width:120px">
+            <f:selectItem itemLabel="-" itemValue="" />
+            <f:selectItem itemLabel="devredışı olduğu" itemValue="devredışı olduğu" />
+            <f:selectItem itemLabel="enterferans olduğu" itemValue="enterferans olduğu" />
+            <f:selectItem itemLabel="NOTAM'lı olduğu" itemValue="NOTAM'lı olduğu" />
+            </p:selectOneMenu>
                 
                  <h:outputLabel  value="ACC Frekansı(MHz)" style="font-weight:bold" />
                 <p:inputText value="#{OlayManagedBean.acc}" style="width:70px"/>
                 
                  <h:outputLabel  value="ACC Frekansı" style="font-weight:bold" />
-                <p:inputText value="#{OlayManagedBean.accfreq}" style="width:120px"/>
+                <p:selectOneMenu id="accfreq" value="#{OlayManagedBean.accfreq}" style="width:120px">
+            <f:selectItem itemLabel="-" itemValue="" />
+            <f:selectItem itemLabel="devredışı olduğu" itemValue="devredışı olduğu" />
+            <f:selectItem itemLabel="enterferans olduğu" itemValue="enterferans olduğu" />
+            <f:selectItem itemLabel="NOTAM'lı olduğu" itemValue="NOTAM'lı olduğu" />
+            </p:selectOneMenu>
                 
                  <h:outputLabel  value="ATIS Frekansı(MHz)" style="font-weight:bold" />
                 <p:inputText value="#{OlayManagedBean.atis}" style="width:70px"/>
                 
                  <h:outputLabel  value="ATIS Frekansı" style="font-weight:bold" />
-                <p:inputText value="#{OlayManagedBean.atisfreq}" style="width:120px"/>
+                <p:selectOneMenu id="atisfreq" value="#{OlayManagedBean.atisfreq}" style="width:120px">
+            <f:selectItem itemLabel="-" itemValue="" />
+            <f:selectItem itemLabel="devredışı olduğu" itemValue="devredışı olduğu" />
+            <f:selectItem itemLabel="enterferans olduğu" itemValue="enterferans olduğu" />
+            <f:selectItem itemLabel="NOTAM'lı olduğu" itemValue="NOTAM'lı olduğu" />
+            </p:selectOneMenu>
                 
                 </h:panelGrid>
                 
@@ -163,10 +205,20 @@
              <h:panelGrid border="1" columns="2" cellpadding="5" cellspacing="20" >
                 
                  <h:outputLabel  value="Radar" style="font-weight:bold" />
-                <p:inputText value="#{OlayManagedBean.radar}"/>
+                <p:selectOneMenu id="radar" value="#{OlayManagedBean.radar}" style="width:120px">
+            <f:selectItem itemLabel="-" itemValue="" />
+            <f:selectItem itemLabel="devredışı olduğu" itemValue="devredışı olduğu" />
+            <f:selectItem itemLabel="hatalı olduğu" itemValue="enterferans olduğu" />
+            <f:selectItem itemLabel="NOTAM'lı olduğu" itemValue="NOTAM'lı olduğu" />
+            </p:selectOneMenu>
                 
                  <h:outputLabel  value="GPS" style="font-weight:bold" />
-                <p:inputText value="#{OlayManagedBean.gps}"/>
+                <p:selectOneMenu id="gps" value="#{OlayManagedBean.gps}" style="width:120px">
+            <f:selectItem itemLabel="-" itemValue="" />
+            <f:selectItem itemLabel="devredışı olduğu" itemValue="devredışı olduğu" />
+            <f:selectItem itemLabel="hatalı olduğu" itemValue="enterferans olduğu" />
+            <f:selectItem itemLabel="NOTAM'lı olduğu" itemValue="NOTAM'lı olduğu" />
+            </p:selectOneMenu>
                 
                 
                 </h:panelGrid>
