@@ -13,8 +13,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
+import org.primefaces.event.SelectEvent;
+import org.primefaces.event.UnselectEvent;
 
 /**
  *
@@ -27,7 +32,8 @@ public class OlayManagedBean
   
    private int id;
    private String name,unvan,kurum,posta,tarih,saat,atc,cagri,tescil,ilsid,localizer,gp,gpdme,marker,vorid,vor,vordme,ndbid,ndb,kule,kulefreq,app,appfreq,acc,accfreq,atis,atisfreq,gps,radar,detay;
-               
+   
+           
             
     public OlayManagedBean() 
     {
@@ -317,7 +323,6 @@ public class OlayManagedBean
     }
 
     
-    
      
     public static Connection conn=null;
     public static PreparedStatement pstmt=null;
@@ -378,10 +383,14 @@ public class OlayManagedBean
 
 //    }
     
+ 
+    
+    
     public ArrayList<OlayManagedBean> GetAllReport()
     {
         
     
+        
     ArrayList<OlayManagedBean> arr=new ArrayList<>();
     str="SELECT id,name,unvan,kurum,posta,tarih,saat,atc,cagri,tescil,ilsid,localizer,gp,gpdme,marker,vorid,vor,vordme,ndbid,ndb,kule,kulefreq,app,appfreq,acc,accfreq,atis,atisfreq,gps,radar,detay FROM raporlar";
     getConnection();
@@ -438,6 +447,38 @@ public class OlayManagedBean
     
     return arr;
     }
+    
+    
+    
+    public void select()
+    {
+        int idReport;
+        ArrayList<OlayManagedBean> arrList=GetAllReport();
+        FacesContext fc=FacesContext.getCurrentInstance();
+        
+        HttpServletRequest request=(HttpServletRequest) fc.getExternalContext().getRequest();
+        idReport=Integer.parseInt(request.getParameter("id"));
+        
+        
+        for (OlayManagedBean olayManagedBean : arrList)
+        {
+            if(olayManagedBean.getId()== idReport)
+            {
+                this.setId(olayManagedBean.getId());
+                this.setName(olayManagedBean.getName());
+                this.setUnvan(olayManagedBean.getUnvan());
+                this.setKurum(olayManagedBean.getKurum());
+                
+            }
+            
+        }
+            
+            
+            
+    }   
+         
+       
+    
 
 
 public void add()

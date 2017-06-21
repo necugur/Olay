@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:fcore="http://java.sun.com/jsf/core"
-          
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
       
     <h:head>
@@ -12,10 +12,10 @@
     <h:body>
         
         <fcore:view>
-            <h:form>
+            <h:form id="form">
                 
                 <p:growl id="growl" life="2000" />
-                
+                               
                 <center>
                 
                 <h1 style="margin-top:0">Olay Raporları</h1>
@@ -27,12 +27,26 @@
                         
                         <center>
                         
-                            <p:dataTable var="list" value="#{OlayManagedBean.GetAllReport()}" reflow="true" rows="10" paginator="true" sortBy="#{list.id}" sortOrder="descending" >
+                            <h:form id="form">
+                
+                                <p:growl id="msgs" showDetail="true" />
+                            
+                                <p:dataTable var="list" value="#{OlayManagedBean.GetAllReport()}" reflow="true" rows="10" paginator="true" sortBy="#{list.id}" sortOrder="descending" >
                     
-                                <p:column headerText="No" style="width:20px" sortBy="#{list.id}">
-                        <h:outputText value="#{list.id}" style="font-size:12pt" />
+                    <p:column  headerText="Detay" style="width:50px"  >
+                       
+                        <p:commandButton    action="select" actionListener="#{OlayManagedBean.select()}" icon="ui-icon-search" >
+                                          <fcore:param name="id" value="#{list.id}"/>
+                            </p:commandButton>
+                        
                     </p:column>
-                    
+                                
+                               
+                           
+                    <p:column headerText="No" style="width:20px" sortBy="#{list.id}">
+                    <h:outputText value="#{list.id}" style="font-size:12pt"/>
+                    </p:column>
+                                
                     <p:column headerText="Ad Soyad" style="width:180px">
                         <h:outputText value="#{list.name}" style="font-size:12pt"/>
                     </p:column>
@@ -137,15 +151,54 @@
                         <h:outputText value="#{list.gps}" style="font-size:12pt"/>
                     </p:column>  
                     
+                                
                                      
                 </p:dataTable> 
+                            
+                       
+                                <p:dialog header="Rapor" id="viewDlg" widgetVar="dlg" modal="true" showEffect="fade" hideEffect="fade" resizable="false" minHeight="40" >
+                                   
+                                    <h:form id="viewForm" >
+                                        <p:panelGrid columns="2"  >
+                        
+                        <h:outputText value="No:" />
+                        <h:outputText value="#{list.id}" />
+                                     
+                        <h:outputText value="Ad Soyad:" />
+                        <h:outputText value="#{list.name}" />
+                        
+                        <h:outputText value="Unvan:" />
+                        <h:outputText value="#{list.unvan}" />
+                        
+                        <h:outputText value="Kurum:" />
+                        <h:outputText value="#{list.kurum}" />
+                        
+                        </p:panelGrid>
+                   
+                                        
+                                        </h:form>
+                                        
+                        </p:dialog>      
+                            
+
                 
+                          </h:form>       
+                        
                 <p:commandButton value="Olay Raporlama için Tıklayınız!" style="font-size : 25px;" action="add" styleClass="ui-priority-primary" />
                 
+                
+                
+                
+                
                 </center>
+                        
+               
                 
                 </p:tab>
                 
+                    
+                    
+                    
                     
                     
                     <p:tab title="ATM Olayları">
