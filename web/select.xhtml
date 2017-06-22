@@ -12,17 +12,25 @@
       <h:body>
        
 <center>
+    
+    <h:panelGrid  border="1"  cellpadding="5" cellspacing="10" style="width:1000px"> 
+        
+        <center> 
   
-    <h1 style="margin-top:0">Olay Raporu</h1>
+    <h1 style="margin-top:5">Olay Raporu</h1>
+    
+    </center>
       
-   
+   </h:panelGrid>
 
     <h:panelGrid border="1" columns="4" cellpadding="5" cellspacing="20" style="width:1000px" > 
 
-                <h:outputLabel value="Ad Soyad" style="font-weight:bold"  />
+            
+        
+                <h:outputLabel value="Ad Soyad" style="font-weight:bold;width:10px" />
                 <h:outputText value="#{OlayManagedBean.name}"  style="width:50px" />
                 
-                <h:outputLabel  value="Ünvan" style="font-weight:bold"/>
+                <h:outputLabel  value="Ünvan" style="font-weight:bold;width:80px"/>
                 <h:outputText value="#{OlayManagedBean.unvan}"/>
                 
                 <h:outputLabel  value="Kurum" style="font-weight:bold"/>
@@ -38,7 +46,7 @@
     <h:panelGrid columns="6" border="1"  cellpadding="5" cellspacing="20" style="width:1000px"> 
                 
                 <h:outputLabel  value="Olay Tarihi" style="font-weight:bold" />
-                <h:outputText value="#{OlayManagedBean.tarih}" />
+                <h:outputLabel value="#{OlayManagedBean.tarih}" />
                               
                 <h:outputLabel  value="Olay Saati" style="font-weight:bold" />
                 <h:outputText value="#{OlayManagedBean.saat}" />
@@ -57,21 +65,23 @@
 
     <h:panelGrid columns="6" border="1" cellpadding="5" cellspacing="20" style="width:1000px">  
                 
+        
                 <h:outputLabel  value="ILS Tanıtma Kodu" style="font-weight:bold" />
-                <h:outputText value="#{OlayManagedBean.ilsid}" style="width:70px"/>
+                <h:outputText value="#{OlayManagedBean.ilsid}" />
+                
                 
                 <h:outputLabel  value="Localizer" style="font-weight:bold" />
-                <h:outputText value="#{OlayManagedBean.localizer}" style="width:70px"/>
+                <h:outputText value="#{OlayManagedBean.localizer}" />
                         
                 
                 <h:outputLabel  value="Glidepath(GP)" style="font-weight:bold" />
-                <h:outputText value="#{OlayManagedBean.gp}" style="width:70px"/>
+                <h:outputText value="#{OlayManagedBean.gp}" />
                 
                 <h:outputLabel  value="GP/DME" style="font-weight:bold" />
-                <h:outputText value="#{OlayManagedBean.gpdme}" style="width:70px"/>
+                <h:outputText value="#{OlayManagedBean.gpdme}" />
                 
                 <h:outputLabel  value="Marker" style="font-weight:bold" />
-                <h:outputText value="#{OlayManagedBean.marker}" style="width:70px"/>
+                <h:outputText value="#{OlayManagedBean.marker}" />
                 
                 </h:panelGrid>
     
@@ -140,10 +150,14 @@
                           
                  <h:outputLabel  value="Açıklama" style="font-weight:bold" />
                            
-                 <h:outputText value="#{OlayManagedBean.detay}" style="width:200px"/>
+                 <h:panelGrid  style="width:800px">   
+                 
+                 <h:outputText value="#{OlayManagedBean.detay}"  />
             
                  </h:panelGrid>
           
+                 </h:panelGrid>
+                 
             </center>    
         
  <h:form>

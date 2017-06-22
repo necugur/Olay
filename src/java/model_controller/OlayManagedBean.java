@@ -468,6 +468,29 @@ public class OlayManagedBean
                 this.setName(olayManagedBean.getName());
                 this.setUnvan(olayManagedBean.getUnvan());
                 this.setKurum(olayManagedBean.getKurum());
+                this.setTarih(olayManagedBean.getTarih());
+                this.setSaat(olayManagedBean.getSaat());
+                this.setAtc(olayManagedBean.getAtc());
+                this.setCagri(olayManagedBean.getCagri());
+                this.setTescil(olayManagedBean.getTescil());
+                this.setIlsid(olayManagedBean.getIlsid());
+                this.setLocalizer(olayManagedBean.getLocalizer());
+                this.setGp(olayManagedBean.getGp());
+                this.setGpdme(olayManagedBean.getGpdme());
+                this.setMarker(olayManagedBean.getMarker());
+                this.setNdbid(olayManagedBean.getNdbid());
+                this.setNdb(olayManagedBean.getNdb());
+                this.setKule(olayManagedBean.getKule());
+                this.setKulefreq(olayManagedBean.getKulefreq());
+                this.setApp(olayManagedBean.getApp());
+                this.setAppfreq(olayManagedBean.getAppfreq());
+                this.setAcc(olayManagedBean.getAcc());
+                this.setAccfreq(olayManagedBean.getAccfreq());
+                this.setAtis(olayManagedBean.getAtis());
+                this.setAtisfreq(olayManagedBean.getAtisfreq());
+                this.setRadar(olayManagedBean.getRadar());
+                this.setGps(olayManagedBean.getGps());
+                this.setDetay(olayManagedBean.getDetay());
                 
             }
             
