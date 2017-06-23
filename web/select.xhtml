@@ -45,12 +45,6 @@
     
     <h:panelGrid columns="6" border="1"  cellpadding="5" cellspacing="20" style="width:1000px"> 
                 
-                <h:outputLabel  value="Olay Tarihi" style="font-weight:bold" />
-                <h:outputLabel value="#{OlayManagedBean.tarih}" />
-                              
-                <h:outputLabel  value="Olay Saati" style="font-weight:bold" />
-                <h:outputText value="#{OlayManagedBean.saat}" />
-              
                 
                 <h:outputLabel  value="Havaalanı/ATC Kodu" style="font-weight:bold" />
                 <h:outputText value="#{OlayManagedBean.atc}"/>
@@ -61,7 +55,23 @@
                 <h:outputLabel  value="Havaaracı Tescil İşareti" style="font-weight:bold" />
                 <h:outputText value="#{OlayManagedBean.tescil}"/>
                 
-     </h:panelGrid>       
+     </h:panelGrid>  
+    
+    <h:panelGrid columns="8" border="1"  cellpadding="5" cellspacing="20" style="width:1000px"> 
+    
+                <h:outputLabel  value="Olay Tarihi" style="font-weight:bold" />
+                <h:outputLabel value="#{OlayManagedBean.tarih}" />
+                             
+                <h:outputLabel  value="Olay Saati" style="font-weight:bold" />
+                <h:outputText value="#{OlayManagedBean.saat}" />
+                
+                <h:outputLabel  value="Bitiş Tarihi" style="font-weight:bold" />
+                <h:outputLabel value="#{OlayManagedBean.bitistarih}" />
+                              
+                <h:outputLabel  value="Bitiş Saati" style="font-weight:bold" />
+                <h:outputText value="#{OlayManagedBean.bitissaat}" />   
+                
+     </h:panelGrid> 
 
     <h:panelGrid columns="6" border="1" cellpadding="5" cellspacing="20" style="width:1000px">  
                 

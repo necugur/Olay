@@ -47,14 +47,6 @@
              <h:panelGrid border="1" columns="6" cellpadding="5" cellspacing="20">
                  
                 
-                 <h:outputLabel  value="Olay Tarihi" style="font-weight:bold" />
-                 <p:inputText value="#{OlayManagedBean.tarih}" type="dateTime"  />
-              
-                 
-                <h:outputLabel  value="Olay Saati" style="font-weight:bold" />
-                <p:inputText value="#{OlayManagedBean.saat}" type="time"/>
-                
-                
                 <h:outputLabel  value="Havaalanı/ATC Kodu" style="font-weight:bold" />
                 <p:inputText value="#{OlayManagedBean.atc}"/>
                 
@@ -67,6 +59,30 @@
                 </h:panelGrid>
             
               </p:tab>
+                  
+                  
+                   <p:tab title="Zaman Bilgileri">
+            
+             <h:panelGrid border="1" columns="8" cellpadding="5" cellspacing="20">
+                 
+                 <h:outputLabel  value="Olay Tarihi" style="font-weight:bold" />
+                 <p:inputText value="#{OlayManagedBean.tarih}" type="date"  />
+              
+                 
+                <h:outputLabel  value="Olay Saati" style="font-weight:bold" />
+                <p:inputText value="#{OlayManagedBean.saat}" type="time"/>
+                
+                 <h:outputLabel  value="Bitiş Tarihi" style="font-weight:bold" />
+                 <p:inputText value="#{OlayManagedBean.bitistarih}" type="date"  />
+              
+                 
+                <h:outputLabel  value="Bitiş Saati" style="font-weight:bold" />
+                <p:inputText value="#{OlayManagedBean.bitissaat}" type="time"/>
+                
+                 </h:panelGrid>
+            
+              </p:tab>
+                  
     
         <p:tab title="Seyrüsefer Yardımcı Cihazları">
             

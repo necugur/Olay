@@ -25,11 +25,15 @@
                 <p:tabView>
                     <p:tab title="CNS Olayları">
                         
+                    
+                        
                         <center>
                         
                             <h:form id="form">
                 
                                 <p:growl id="msgs" showDetail="true" />
+                                
+                                
                             
                                 <p:dataTable var="list" value="#{OlayManagedBean.GetAllReport()}" reflow="true" rows="10" paginator="true" sortBy="#{list.id}" sortOrder="descending" >
                     
@@ -43,11 +47,11 @@
                                 
                                
                            
-                    <p:column headerText="No" style="width:20px" sortBy="#{list.id}">
+                                    <p:column headerText="No" style="width:20px" sortBy="#{list.id}" sortable="true">
                     <h:outputText value="#{list.id}" style="font-size:12pt"/>
                     </p:column>
                                 
-                    <p:column headerText="Ad Soyad" style="width:180px">
+                    <p:column headerText="Ad Soyad" style="width:180px" >
                         <h:outputText value="#{list.name}" style="font-size:12pt"/>
                     </p:column>
                    
@@ -69,6 +73,14 @@
                     
                     <p:column headerText="Olay Saati" style="width:80px">
                         <h:outputText value="#{list.saat}" style="font-size:12pt"/>
+                    </p:column>
+                                    
+                    <p:column headerText="Bitiş Tarihi" style="width:80px" >
+                        <h:outputText value="#{list.bitistarih}" style="font-size:12pt"/>
+                    </p:column>
+                    
+                    <p:column headerText="Bitiş Saati" style="width:80px">
+                        <h:outputText value="#{list.bitissaat}" style="font-size:12pt"/>
                     </p:column>
                    
                     <p:column headerText="Havaalanı/ATC Kodu" style="width:120px">

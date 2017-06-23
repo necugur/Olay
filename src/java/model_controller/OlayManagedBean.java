@@ -31,7 +31,7 @@ public class OlayManagedBean
 {
   
    private int id;
-   private String name,unvan,kurum,posta,tarih,saat,atc,cagri,tescil,ilsid,localizer,gp,gpdme,marker,vorid,vor,vordme,ndbid,ndb,kule,kulefreq,app,appfreq,acc,accfreq,atis,atisfreq,gps,radar,detay;
+   private String name,unvan,kurum,posta,tarih,saat,bitistarih,bitissaat,atc,cagri,tescil,ilsid,localizer,gp,gpdme,marker,vorid,vor,vordme,ndbid,ndb,kule,kulefreq,app,appfreq,acc,accfreq,atis,atisfreq,gps,radar,detay;
    
            
             
@@ -39,7 +39,7 @@ public class OlayManagedBean
     {
     }
 
-    public OlayManagedBean(int id, String name, String unvan, String kurum, String posta, String tarih, String saat, String atc, String cagri, String tescil, String ilsid, String localizer, String gp, String gpdme, String marker, String vorid, String vor, String vordme, String ndbid, String ndb, String kule, String kulefreq, String app, String appfreq, String acc, String accfreq, String atis, String atisfreq, String gps, String radar, String detay) {
+    public OlayManagedBean(int id, String name, String unvan, String kurum, String posta, String tarih, String saat,String bitistarih, String bitissaat, String atc, String cagri, String tescil, String ilsid, String localizer, String gp, String gpdme, String marker, String vorid, String vor, String vordme, String ndbid, String ndb, String kule, String kulefreq, String app, String appfreq, String acc, String accfreq, String atis, String atisfreq, String gps, String radar, String detay) {
         this.id = id;
         this.name = name;
         this.unvan = unvan;
@@ -47,6 +47,8 @@ public class OlayManagedBean
         this.posta = posta;
         this.tarih = tarih;
         this.saat = saat;
+        this.bitistarih = bitistarih;
+        this.bitissaat = bitissaat;
         this.atc = atc;
         this.cagri = cagri;
         this.tescil = tescil;
@@ -128,6 +130,22 @@ public class OlayManagedBean
 
     public void setSaat(String saat) {
         this.saat = saat;
+    }
+    
+     public String getBitistarih() {
+        return bitistarih;
+    }
+
+    public void setBitistarih(String bitistarih) {
+        this.bitistarih = bitistarih;
+    }
+
+    public String getBitissaat() {
+        return bitissaat;
+    }
+
+    public void setBitissaat(String bitissaat) {
+        this.bitissaat = bitissaat;
     }
 
     public String getAtc() {
@@ -383,16 +401,14 @@ public class OlayManagedBean
 
 //    }
     
- 
-    
-    
     public ArrayList<OlayManagedBean> GetAllReport()
     {
         
     
         
+        
     ArrayList<OlayManagedBean> arr=new ArrayList<>();
-    str="SELECT id,name,unvan,kurum,posta,tarih,saat,atc,cagri,tescil,ilsid,localizer,gp,gpdme,marker,vorid,vor,vordme,ndbid,ndb,kule,kulefreq,app,appfreq,acc,accfreq,atis,atisfreq,gps,radar,detay FROM raporlar";
+    str="SELECT id,name,unvan,kurum,posta,tarih,saat,bitistarih,bitissaat,atc,cagri,tescil,ilsid,localizer,gp,gpdme,marker,vorid,vor,vordme,ndbid,ndb,kule,kulefreq,app,appfreq,acc,accfreq,atis,atisfreq,gps,radar,detay FROM rapor";
     getConnection();
        try {
           pstmt=conn.prepareStatement(str);
@@ -407,6 +423,8 @@ public class OlayManagedBean
             st.setPosta(rs.getString("posta"));
             st.setTarih(rs.getString("tarih"));
             st.setSaat(rs.getString("saat"));
+            st.setBitistarih(rs.getString("bitistarih"));
+            st.setBitissaat(rs.getString("bitissaat"));
             st.setAtc(rs.getString("atc"));
             st.setCagri(rs.getString("cagri"));
             st.setTescil(rs.getString("tescil"));
@@ -470,6 +488,8 @@ public class OlayManagedBean
                 this.setKurum(olayManagedBean.getKurum());
                 this.setTarih(olayManagedBean.getTarih());
                 this.setSaat(olayManagedBean.getSaat());
+                this.setBitistarih(olayManagedBean.getBitistarih());
+                this.setBitissaat(olayManagedBean.getBitissaat());
                 this.setAtc(olayManagedBean.getAtc());
                 this.setCagri(olayManagedBean.getCagri());
                 this.setTescil(olayManagedBean.getTescil());
@@ -507,7 +527,7 @@ public class OlayManagedBean
 public void add()
 {
 getConnection();
-str="insert into raporlar(name,unvan,kurum,posta,tarih,saat,atc,cagri,tescil,ilsid,localizer,gp,gpdme,marker,vorid,vor,vordme,ndbid,ndb,kule,kulefreq,app,appfreq,acc,accfreq,atis,atisfreq,radar,gps,detay) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+str="insert into rapor(name,unvan,kurum,posta,tarih,saat,bitistarih,bitissaat,atc,cagri,tescil,ilsid,localizer,gp,gpdme,marker,vorid,vor,vordme,ndbid,ndb,kule,kulefreq,app,appfreq,acc,accfreq,atis,atisfreq,radar,gps,detay) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 try
 {
     pstmt=conn.prepareStatement(str);
@@ -517,30 +537,32 @@ try
     pstmt.setString(4, this.getPosta());
     pstmt.setString(5, this.getTarih());
     pstmt.setString(6, this.getSaat());
-    pstmt.setString(7, this.getAtc());
-    pstmt.setString(8, this.getCagri());
-    pstmt.setString(9, this.getTescil());
-    pstmt.setString(10, this.getIlsid());
-    pstmt.setString(11, this.getLocalizer());
-    pstmt.setString(12, this.getGp());
-    pstmt.setString(13, this.getGpdme());
-    pstmt.setString(14, this.getMarker());
-    pstmt.setString(15, this.getVorid());
-    pstmt.setString(16, this.getVor());
-    pstmt.setString(17, this.getVordme());
-    pstmt.setString(18, this.getNdbid());
-    pstmt.setString(19, this.getNdb());
-    pstmt.setString(20, this.getKule());
-    pstmt.setString(21, this.getKulefreq());
-    pstmt.setString(22, this.getApp());
-    pstmt.setString(23, this.getAppfreq());
-    pstmt.setString(24, this.getAcc());
-    pstmt.setString(25, this.getAccfreq());
-    pstmt.setString(26, this.getAtis());
-    pstmt.setString(27, this.getAtisfreq());
-    pstmt.setString(28, this.getRadar());
-    pstmt.setString(29, this.getGps());
-    pstmt.setString(30, this.getDetay());
+    pstmt.setString(7, this.getBitistarih());
+    pstmt.setString(8, this.getBitissaat());
+    pstmt.setString(9, this.getAtc());
+    pstmt.setString(10, this.getCagri());
+    pstmt.setString(11, this.getTescil());
+    pstmt.setString(12, this.getIlsid());
+    pstmt.setString(13, this.getLocalizer());
+    pstmt.setString(14, this.getGp());
+    pstmt.setString(15, this.getGpdme());
+    pstmt.setString(16, this.getMarker());
+    pstmt.setString(17, this.getVorid());
+    pstmt.setString(18, this.getVor());
+    pstmt.setString(19, this.getVordme());
+    pstmt.setString(20, this.getNdbid());
+    pstmt.setString(21, this.getNdb());
+    pstmt.setString(22, this.getKule());
+    pstmt.setString(23, this.getKulefreq());
+    pstmt.setString(24, this.getApp());
+    pstmt.setString(25, this.getAppfreq());
+    pstmt.setString(26, this.getAcc());
+    pstmt.setString(27, this.getAccfreq());
+    pstmt.setString(28, this.getAtis());
+    pstmt.setString(29, this.getAtisfreq());
+    pstmt.setString(30, this.getRadar());
+    pstmt.setString(31, this.getGps());
+    pstmt.setString(32, this.getDetay());
    
     
 
